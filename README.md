@@ -16,7 +16,7 @@ Given two points on the earth's surface, with their latitudes and longitudes rep
 - Point 1: $(\phi_A, \lambda_A)$
 - Point 2: $(\phi_B, \lambda_B)$
 
-The Haversine Formula is:
+Haversine Formula as follow:
 
 ![a = \sin^2\left(\frac{\phi_B - \phi_A}{2}\right) + \cos(\phi_A) \cdot \cos(\phi_B) \cdot \sin^2\left(\frac{\lambda_B - \lambda_A}{2}\right)](https://latex.codecogs.com/png.latex?\color{cyan}a%20%3D%20%5Csin%5E2%5Cleft(%5Cfrac%7B%5Cphi_B%20-%20%5Cphi_A%7D%7B2%7D%5Cright)%20%2B%20%5Ccos(%5Cphi_A)%20%5Ccdot%20%5Ccos(%5Cphi_B)%20%5Ccdot%20%5Csin%5E2%5Cleft(%5Cfrac%7B%5Clambda_B%20-%20%5Clambda_A%7D%7B2%7D%5Cright))
 
