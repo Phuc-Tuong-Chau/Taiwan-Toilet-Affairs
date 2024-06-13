@@ -19,13 +19,13 @@ Given two points on the earth's surface, with their latitudes and longitudes rep
 
 The Haversine Formula is:
 
-\[ 
+$\[ 
 a = \sin^2\left(\frac{\phi_B - \phi_A}{2}\right) + \cos(\phi_A) \cdot \cos(\phi_B) \cdot \sin^2\left(\frac{\lambda_B - \lambda_A}{2}\right) 
 \]
 
 \[ 
 c = 2 \cdot \text{atan2}\left( \sqrt{a}, \sqrt{1-a} \right) 
-\]
+\]$
 
 \[ 
 d = R \cdot c 
