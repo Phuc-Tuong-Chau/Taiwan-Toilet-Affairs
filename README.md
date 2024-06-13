@@ -10,9 +10,7 @@ Taiwan-Toilet-Affairs
 ## Analysis
 [Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
 
-# Haversine Formula
-
-# Haversine Formula
+### Haversine Formula
 
 Given two points on the earth's surface, with their latitudes and longitudes represented as follows:
 - Point 1: $(\phi_A, \lambda_A)$
