@@ -13,24 +13,26 @@ Taiwan-Toilet-Affairs
 # Haversine Formula
 
 
+# Haversine Formula
+
 Given two points on the earth's surface, with their latitudes and longitudes represented as follows:
 - Point 1: $(\phi_A, \lambda_A)$
 - Point 2: $(\phi_B, \lambda_B)$
 
 The Haversine Formula is:
-$
-\[
-a = \sin^2\left(\frac{\phi_B - \phi_A}{2}\right) + \cos(\phi_A) \cdot \cos(\phi_B) \cdot \sin^2\left(\frac{\lambda_B - \lambda_A}{2}\right)
+
+\[ 
+a = \sin^2\left(\frac{\phi_B - \phi_A}{2}\right) + \cos(\phi_A) \cdot \cos(\phi_B) \cdot \sin^2\left(\frac{\lambda_B - \lambda_A}{2}\right) 
 \]
 
-\[
-c = 2 \cdot \text{atan2}\left( \sqrt{a}, \sqrt{1-a} \right)
+\[ 
+c = 2 \cdot \text{atan2}\left( \sqrt{a}, \sqrt{1-a} \right) 
 \]
 
-\[
-d = R \cdot c
+\[ 
+d = R \cdot c 
 \]
-$
+
 Where:
 - $R$ is the earth's radius (mean radius = 6,371 km).
 
