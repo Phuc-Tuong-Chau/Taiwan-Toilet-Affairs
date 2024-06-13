@@ -28,6 +28,16 @@ Where:
 - $R$ is the earth's radius (mean radius = 6,371 km).
 
 ```python
+import pandas as pd
+import numpy as np
+import folium
+
+#dataset of tourist spots in Taipei
+tourists = pd.read_csv("/content/tourists_with_boundaries_en.csv")
+
+# dataset of all toilets in Taipei
+Taipei_Toilet = pd.read_csv("/content/Taipei_Toilet_new.csv")
+
 # Haversine
 def haversine(lat1, lon1, lat2, lon2):
     R = 6371000  #radius of Earth in meter
@@ -38,6 +48,41 @@ def haversine(lat1, lon1, lat2, lon2):
     a = np.sin(delta_phi / 2) ** 2 + np.cos(phi1) * np.cos(phi2) * np.sin(delta_lambda / 2) ** 2
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
     return R * c
+
+# check if all toilets are within 400m
+within_range_toilets = []
+for _, toilet in Taipei_Toilet.iterrows():
+    toilet_lat = toilet['latitude']
+    toilet_lon = toilet['longitude']
+    within_range = False
+    for _, tourist in tourists.iterrows():
+        tourist_lat = tourist['Latitude']
+        tourist_lon = tourist['Longitude']
+        distance = haversine(toilet_lat, toilet_lon, tourist_lat, tourist_lon)
+        if distance <= 400:
+            within_range = True
+            break
+    if within_range:
+        within_range_toilets.append(toilet)
+
+# toilets  within 400m
+within_range_toilets_df = pd.DataFrame(within_range_toilets)
+
+# create a map
+map_center = [tourists['Latitude'].mean(), tourists['Longitude'].mean()]
+mymap = folium.Map(location=map_center, zoom_start=12)
+
+# circle
+for _, row in tourists.iterrows():
+    location = [row['Latitude'], row['Longitude']]
+    folium.Marker(location, popup=row['Sight'], icon=folium.Icon(color='blue')).add_to(mymap)
+    folium.Circle(location, radius=400, color='blue', fill=False).add_to(mymap)
+
+# mark toilets
+for _, row in within_range_toilets_df.iterrows():
+    location = [row['latitude'], row['longitude']]
+    folium.Marker(location, popup=row['name'], icon=folium.Icon(color='green')).add_to(mymap)
+
 ```
 ## Results
 [Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
