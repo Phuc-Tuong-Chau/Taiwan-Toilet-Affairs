@@ -20,27 +20,21 @@ Taiwan-Toilet-Affairs
 \section*{Haversine Formula}
 
 Given two points on the earth's surface, with their latitudes and longitudes represented as follows:
-- Point 1: $(\phi_1, \lambda_1)$
-- Point 2: $(\phi_2, \lambda_2)$
-
-Where:
-- $\phi_1, \phi_2$ are the latitudes of point 1 and point 2 in radians.
-- $\lambda_1, \lambda_2$ are the longitudes of point 1 and point 2 in radians.
+- Point 1: $(\phi_A, \lambda_A)$
+- Point 2: $(\phi_B, \lambda_B)$
 
 The Haversine Formula is:
 
 \[
-a = \sin^2\left(\frac{\Delta \phi}{2}\right) + \cos(\phi_1) \cdot \cos(\phi_2) \cdot \sin^2\left(\frac{\Delta \lambda}{2}\right)
+a = \sin^2\left(\frac{\phi_B - \phi_A}{2}\right) + \cos(\phi_A) \cdot \cos(\phi_B) \cdot \sin^2\left(\frac{\lambda_B - \lambda_A}{2}\right)
 \]
 
-Where:
-- $\Delta \phi = \phi_2 - \phi_1$
-- $\Delta \lambda = \lambda_2 - \lambda_1$
-
-Then the distance $d$ between the two points is:
+\[
+c = 2 \cdot \text{atan2}\left( \sqrt{a}, \sqrt{1-a} \right)
+\]
 
 \[
-d = 2 \cdot R \cdot \arcsin\left(\sqrt{a}\right)
+d = R \cdot c
 \]
 
 Where:
