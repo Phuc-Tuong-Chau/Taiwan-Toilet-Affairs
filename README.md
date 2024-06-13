@@ -13,8 +13,6 @@ Taiwan-Toilet-Affairs
 # Haversine Formula
 
 
-# Haversine Formula
-
 Given two points on the earth's surface, with their latitudes and longitudes represented as follows:
 - Point 1: $(\phi_A, \lambda_A)$
 - Point 2: $(\phi_B, \lambda_B)$
