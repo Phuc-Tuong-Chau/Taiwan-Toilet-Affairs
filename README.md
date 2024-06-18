@@ -12,9 +12,7 @@ Taiwan-Toilet-Affairs
 
 ### Haversine Formula
 
-Given two points on the earth's surface, with their latitudes and longitudes represented as follows:
-- Point 1: $(\phi_A, \lambda_A)$
-- Point 2: $(\phi_B, \lambda_B)$
+Haversine Formula is used to calculate the distance between two or several given locations, by converting the latitude and longitude of each to radians.
 
 Haversine Formula as follow:
 
