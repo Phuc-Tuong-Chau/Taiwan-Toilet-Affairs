@@ -25,7 +25,7 @@ Haversine Formula as follow:
 Where:
 - $R$ is the earth's radius (mean radius = 6,371 km).
 
-In our analysis, a circle is drawn with a radius equivalent to 400 meters around tourist spots in Taipei. The decision of the length lies upon common standard, as 400 meters are widely accepted as a conventional walking distance. We mark all the public toilets in the provided range of circle and calculate the average number of public toilets within the area, and thus come up with a unique index that has not yet been touched upon, in the pursuit of the goal that this index can be utilized an a parameter for urban planning outside of Taipei.
+In our analysis, a circle is drawn with a radius equivalent to 400 meters around tourist spots in Taipei. The decision of the length lies upon the common standard, as 400 meters are widely accepted as a conventional walking distance. We mark all the public toilets in the provided range of circle and calculate the average number of public toilets within the area, and thus come up with a unique index that has not yet been touched upon, in the pursuit of the goal that this index can be utilized an a parameter for urban planning outside of Taipei.
 
 **sample code executed in python**
 ```python
