@@ -67,6 +67,7 @@ In our analysis, a circle is drawn with a radius equivalent to 400 meters around
 
 **Solutions in R (calculation all Taiwan, maps Taipei)**
 
+```R
 library(readxl)
 library(ggplot2)
 library(dplyr)
