@@ -3,10 +3,31 @@ Taiwan-Toilet-Affairs
 
 ## Project Description
 [Enter a brief description of your project, including the data you used and the analytical methods you applied. Be sure to provide context for your project and explain why it is important.]
+
+<p>This project seeks to examine Taiwan through the lens of a fundamental human need: the provision of public toilets. Access to public bathrooms shapes the experience of being a human in a city and should be an essential part in urban planning. We want to know how Taiwan is doing in terms of this, and make the data useful for the public and researchers.</p>
+
+### Goal
+The goal of the project is three-fold:
+- First, we want to examine the density and distribution of public toilets across Taiwan. We will calculate and visualize it through to index: toilets per population and toilets per area
+- Second, we aim to create a new variable that shows the number of public toilets around tourist spots in Taipei/Taiwan. This can serve as an index to measure the quality of urban planning across cities.
+- And third, we want to make an interactive map that shows every public toilet in Taipei around the walking distance of popular tourist spots. This is hopefully useful for somebody in need when nature calls.
+
+### Data & the use of data
+
+| Data | Source | Description |
+|---|---|---|
+| Taiwan's nationwide toilets data | Environmental Protection Administration, Ministry of Environment | Main dataset. This contains details of 44876 public toilets across the nation, including (1) city and village level, (2) name, (3) address, (4) longitude & latitude, (5) quality (4 levels), (6) location types (26 types), (7) designated users (6 types = male, female, handicapped, gender friendly, both, family). |
+| Taiwan's Tourists Spots Coordinates | Shaowei Wu's blog, Tourism Administration, Taipei City Government, Google Maps | We need coordinates of tourist spots to calculate the distance to toilets. We use data provided by Taipei City government & Google Maps (for Taipei) and Shaowei Wu's blog (for Taiwan) |
+| Taiwan's cities population and area | Ministry of Interior, Republic of China (Taiwan); National Statistics | To calculate the density of toilets per population and area at cities levels |
+
 ## Getting Started
 [Provide instructions on how to get started with your project, including any necessary software or data. Include installation instructions and any prerequisites or dependencies that are required.]
+</p>
+
+
 ## File Structure
 [Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
+
 ## Analysis
 [Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
 
@@ -89,7 +110,31 @@ for _, row in within_range_toilets_df.iterrows():
 [Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
 ## Contributors
 [List the contributors to your project and describe their roles and responsibilities.]
+
+- Nguyen, Thi Xuan Huong (Huong) 阮春香, 112ZM1043, Project Manager
+- Chu, Fu-Hsiang (Gary) 朱福祥, 109ZU1027, Coder
+- Bui, Phuong Thao (Thao) 裴芳草, 113ZM1011, Coder & Writer
+- Karolina Kubicova (Karolina) 辜麗娜, 112ZM1044, Researcher, Designer, Writer
+
 ## Acknowledgments
 [Thank any individuals or organizations who provided support or assistance during your project, including funding sources or data providers.]
+- We'd like to thank Professor Chung-Pei Pien of ICI for his guidance and encouragement throughout the course Big Data and Social Analysis. His excitement for this toilet idea was key in pushing us go forward. Thanks also to the TAs, Joanna and Maobin for their help in organizing the course. And to Datacamp for being an extra teacher.
+- Great thanks to the to the data collectors working with the Ministry of Environment for keeping a good record of the toilets around Taiwan. We hope you keep up the great work! Taipei's tourists spotThe coordinates of over 1000 tourists spots around Taiwan is from Shaowei Wu's blog. We also thank you for sharing that to the public domain.
+- And millions thanks to the members of online coding community. We learn so much from you.
+  
 ## References
 [List any references or resources that you used during your project, including data sources, analytical methods, and tools.]
+- Data sources:
+    - Archives on public toilets nationwide, Environmental Protection Administration, Ministry of Environment (Taiwan). https://data.moenv.gov.tw/en/dataset/detail/FAC_P_07
+    - Shaowei Wu’s Blog (2018) Coordinate location map of Taiwan’s attractions. https://shaoweiwu088.pixnet.net/blog/post/262765884-%e5%85%a8%e5%8f%b0%e6%99%af%e9%bb%9e%e5%ba%a7%e6%a8%99%e4%bd%8d%e7%bd%ae%e5%9c%96
+    - The number of tourists in the major sightseeing and recreation areas of Taipei City. Department of Budget, Accounting and Statistics, Taipei City Government. https://data.gov.tw/en/datasets/131711
+    - Taiwan Counties and Cities Population and Area. Ministry of Interior, Republic of China (Taiwan); National Statistics, Republic of China (Taiwan). Access through Citypopulation.de. https://www.citypopulation.de/en/taiwan/cities/
+
+- Researches:
+    - Silitonga, S. (2020). Walkability; The Relationship of Walking Distance, Walking Time and Walking Speed. Jurnal Rekayasa Konstruksi Mekanika Sipil (JRKMS), 3(1), 19-26. DOI: 10.54367/JRKMS.V3I1.699.
+    - Bliss, D. Z., & Park, Y. S. (2020). Public toilets in parklands or open spaces in international cities using geographic information systems. International urogynecology journal, 31(5), 939–945. https://doi.org/10.1007/s00192-019-04024-6
+    - Simon Kettle (2017). Distance on a sphere: The Haversine formulas. https://community.esri.com/t5/coordinate-reference-systems-blog/distance-on-a-sphere-the-haversine-formula/ba-p/902128
+- Python packages: Pandas for data aggregation, Numpy for calculation, Folium for the map
+- R packages: Dplyr, Sf, tmap, ggplot2, leaflet
+
+
