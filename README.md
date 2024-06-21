@@ -9,7 +9,7 @@ Taiwan Toilet Affairs
 ### Goal
 The goal of the project is three-fold:
 - First, we want to examine the density and distribution of public toilets across Taiwan. We will calculate and visualize it through to index: toilets per population and toilets per area
-- Second, we aim to create a new variable that shows the number of public toilets around tourist spots in Taipei/Taiwan. This can serve as an index to measure the quality of urban planning across cities.
+- Second, we aim to create *Tourist Toilet Index* - a new variable that shows the number of public toilets around tourist spots in Taipei/Taiwan. This can serve as an index to measure the quality of urban planning across cities/countries
 - And third, we want to make an interactive map that shows every public toilet in Taipei around the walking distance of popular tourist spots. This is hopefully useful for somebody in need when nature calls.
 
 ### Data & the use of data
@@ -17,22 +17,38 @@ The goal of the project is three-fold:
 | Data | Source | Description |
 |---|---|---|
 | Taiwan's nationwide toilets data | Environmental Protection Administration, Ministry of Environment | Main dataset. This contains details of 44876 public toilets across the nation, including (1) city and village level, (2) name, (3) address, (4) longitude & latitude, (5) quality (4 levels), (6) location types (26 types), (7) designated users (6 types = male, female, handicapped, gender friendly, both, family). |
-| Taiwan's Tourists Spots Coordinates | Tourism Administration, Taipei City Government, Google Maps, Shaowei Wu's blog | We need coordinates of tourist spots to calculate the distance to toilets. We use data provided by Taipei City government & Google Maps (for Taipei) and Shaowei Wu's blog (for Taiwan) |
+| Taiwan's Tourists Spots Coordinates | Tourism Administration, Taipei City Government, Google Maps, Shaowei Wu's blog | We need coordinates of tourist spots to calculate the distance to toilets. We use data provided by Taipei City government & Google Maps. We collect manually for 32 spots in Taipei and use Shaowei Wu's dataset for 1183 spots in Taiwan |
 | Taiwan's cities population and area | Ministry of Interior, Republic of China (Taiwan); National Statistics | To calculate the density of toilets per population and area at cities levels |
 
 ## Getting Started
 [Provide instructions on how to get started with your project, including any necessary software or data. Include installation instructions and any prerequisites or dependencies that are required.]
-1. Data collection: Down
-2. 
-
+1. Data collection: Download data from all the sources
+    - Taiwan Toilet data: download from source
+    - Taipei tourist spots: list from Taipei Government and coordinates from Google Maps
+    - Taiwan tourist spots: download from Shaowei Wu's blog
+    - Taiwan Population & Area data: all counties/cities
+2. Data cleaning
+    - Cleaning toilet dataset: rename columns, translate into English, factcheck
+    - Taiwan tourists spots: rename columns, rearrange, factcheck
+    - Merge toilets, population, area to a file for calculation toilets density per population/area
+    - Merge toilets, tourist spots coordinates for calculating distance and mapping
+3. R Packages needed:
+4. Python packages needed:
 
 ## File Structure
 [Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
+1. 
 
 ## Analysis
 [Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
 
-### Haversine Formula
+### Toilets Distribution
+
+#### Heatmap
+[Thao adds here]
+
+### Tourist Toilet Index 
+#### Haversine Formula
 
 Haversine Formula is used to calculate the distance between two or several given locations, by converting the latitude and longitude of each to radians.
 
@@ -47,9 +63,14 @@ Haversine Formula as follow:
 Where:
 - $R$ is the earth's radius (mean radius = 6,371 km).
 
-In our analysis, a circle is drawn with a radius equivalent to 400 meters around tourist spots in Taipei. The decision of the length lies upon the common standard, as 400-meter is widely accepted as a conventional walking distance. We mark all the public toilets in the provided range of circles and calculate the average number of public toilets within the area, and thus come up with a unique index that has not yet been touched upon, in the pursuit of the goal that this index can be utilized as a parameter for urban planning outside of Taipei. For the demonstration, the package called folium plays an essential role in our data visualization, we create a html file to showcase our results with markers of tourists spots in Taipei as well as surrounding public toilets.
+In our analysis, a circle is drawn with a radius equivalent to 400 meters around tourist spots in Taiwan. The decision of the length lies upon the common standard, as 400-meter is widely accepted as a conventional walking distance. We mark all the public toilets in the provided range of circles and calculate the average number of public toilets within the area of every tourist spots. After that, we create an interactive map html file to showcase our results with markers of tourists spots in Taipei as well as surrounding public toilets. We show the demonstration in R and Python below.
 
-**sample code executed in python**
+**Solutions in R (calculation all Taiwan, maps Taipei)**
+
+[Thao adds here]
+
+
+**Solutions in Python (Taipei only)**
 ```python
 import pandas as pd
 import numpy as np
@@ -107,11 +128,17 @@ for _, row in within_range_toilets_df.iterrows():
     folium.Marker(location, popup=row['name'], icon=folium.Icon(color='green')).add_to(mymap)
 
 ```
+
 ## Results
 [Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
 
+### Toilet Distibution
 
+result by counties and nationwide
 
+### Tourist Toilet Index
+
+Results by counties and nationwide
 
 ## Contributors
 [List the contributors to your project and describe their roles and responsibilities.]
@@ -125,7 +152,7 @@ for _, row in within_range_toilets_df.iterrows():
 [Thank any individuals or organizations who provided support or assistance during your project, including funding sources or data providers.]
 - We'd like to thank Professor Chung-Pei Pien of ICI for his guidance and encouragement throughout the course Big Data and Social Analysis. His excitement for this toilet idea was key in pushing us go forward. Thanks also to the TAs, Joanna and Maobin for their help in organizing the course. And to Datacamp for being an extra teacher.
 - Great thanks to the to the data collectors working with the Ministry of Environment for keeping a good record of the toilets around Taiwan. We hope you keep up the great work! Taipei's tourists spotThe coordinates of over 1000 tourists spots around Taiwan is from Shaowei Wu's blog. We also thank you for sharing that to the public domain.
-- And millions thanks to the members of online coding community. We learn so much from you.
+- And millions thanks to the members of online coding communities. We learn so much from you.
   
 ## References
 [List any references or resources that you used during your project, including data sources, analytical methods, and tools.]
