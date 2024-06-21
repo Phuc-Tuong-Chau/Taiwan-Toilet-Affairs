@@ -1,5 +1,5 @@
 # Project Title
-Taiwan-Toilet-Affairs
+Taiwan Toilet Affairs
 
 ## Project Description
 [Enter a brief description of your project, including the data you used and the analytical methods you applied. Be sure to provide context for your project and explain why it is important.]
@@ -17,12 +17,13 @@ The goal of the project is three-fold:
 | Data | Source | Description |
 |---|---|---|
 | Taiwan's nationwide toilets data | Environmental Protection Administration, Ministry of Environment | Main dataset. This contains details of 44876 public toilets across the nation, including (1) city and village level, (2) name, (3) address, (4) longitude & latitude, (5) quality (4 levels), (6) location types (26 types), (7) designated users (6 types = male, female, handicapped, gender friendly, both, family). |
-| Taiwan's Tourists Spots Coordinates | Shaowei Wu's blog, Tourism Administration, Taipei City Government, Google Maps | We need coordinates of tourist spots to calculate the distance to toilets. We use data provided by Taipei City government & Google Maps (for Taipei) and Shaowei Wu's blog (for Taiwan) |
+| Taiwan's Tourists Spots Coordinates | Tourism Administration, Taipei City Government, Google Maps, Shaowei Wu's blog | We need coordinates of tourist spots to calculate the distance to toilets. We use data provided by Taipei City government & Google Maps (for Taipei) and Shaowei Wu's blog (for Taiwan) |
 | Taiwan's cities population and area | Ministry of Interior, Republic of China (Taiwan); National Statistics | To calculate the density of toilets per population and area at cities levels |
 
 ## Getting Started
 [Provide instructions on how to get started with your project, including any necessary software or data. Include installation instructions and any prerequisites or dependencies that are required.]
-</p>
+1. Data collection: Down
+2. 
 
 
 ## File Structure
@@ -108,6 +109,10 @@ for _, row in within_range_toilets_df.iterrows():
 ```
 ## Results
 [Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
+
+
+
+
 ## Contributors
 [List the contributors to your project and describe their roles and responsibilities.]
 
