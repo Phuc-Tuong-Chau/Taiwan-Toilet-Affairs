@@ -90,7 +90,8 @@ tourist_31 <- read.csv("tourists_with_boundaries.csv")
 taipei_toilet <- read.csv("Taipei_Toilet_new.csv")
 
 #For calculate the distance by Haversine formula, there're at least two function in R, geosphere::distHaversine and fossil::deg.dist. Both works well with current data but for bigger dataset (1000 tourist spots and 44000 toilet across Taiwan), deg.dist does faster. geosphere::distHaversine calculates distance in meters, while deg.dist in kilometers
-#Create a loop to calculate distace from every tourist spot to all toilet, count the number of toilet in 400 m, adding all to a list
+#Create a loop to calculate distace from every tourist spot to all toilet,
+#count the number of toilet in 400 m, add counts to a list (every count is one tourist spot's number of walkable toilets)
 
 distance = list()
 number = list()
