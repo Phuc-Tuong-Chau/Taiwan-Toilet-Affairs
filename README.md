@@ -35,11 +35,13 @@ The goal of the project is three-fold:
 
 ## File Structure
 [Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
-1. Taiwan Toilets [raw data]
-2. Taiwan Tourist Spots
-3. Taiwan Toilet County
-4. Taipei_Toilet_new
-5. Tourist_with boundaries
+1. taiwan_toilet_full:
+2. tourist_spot_full:
+3. taiwan_population:
+4. taipei_population:
+5. Taipei_Toilet_new:
+6. tourist_with_boundaries_en
+7. 
 
 ## Analysis
 [Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
