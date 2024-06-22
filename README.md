@@ -75,10 +75,7 @@ library(stringr)
 library(tidyr)
 library(sf)
 library(readr)
-library(ggmap)
-library(spdep)
 library(ggplot2)
-library(tmap)
 library(leaflet)
 library(geosphere)
 library(fossil)
@@ -86,50 +83,72 @@ library(tidyverse)
 library(leaflet)
 library(htmlwidgets)
 
-#Import data (32 tourist spot + toilet in Taipei)
-tourist_32 <- read.csv("tourists_with_boundaries.csv")
-taipei_toilet <- read.csv("Taipei_Toilet_new (1).csv")
+#DISCLAIMER: We use different sets of data for different purpose. Smaller sets for the interactive maps, while bigger sets for other calculation + heat maps
+
+#Import smaller set: 31 tourist spots + toilets in Taipei
+tourist_31 <- read.csv("tourists_with_boundaries.csv")
+taipei_toilet <- read.csv("Taipei_Toilet_new.csv")
 
 #For calculate the distance by Haversine formula, there're at least two function in R, geosphere::distHaversine and fossil::deg.dist. Both works well with current data but for bigger dataset (1000 tourist spots and 44000 toilet across Taiwan), deg.dist does faster. geosphere::distHaversine calculates distance in meters, while deg.dist in kilometers
+#Create a loop to calculate distace from every tourist spot to all toilet, count the number of toilet in 400 m, adding all to a list
 
 distance = list()
 number = list()
 
-for (i in 1:nrow(tourist_32))
+for (i in 1:nrow(tourist_31))
 {
   for (n in 1:nrow(taipei_toilet))
   {
     distance[n] = deg.dist(
-      tourist_32$Longitude[i], 
-      tourist_32$Latitude[i], 
+      tourist_31$Longitude[i], 
+      tourist_31$Latitude[i], 
       taipei_toilet$longitude[n], 
       taipei_toilet$latitude[n]
     ) }
   number[i] = length(distance[distance < 0.4])
 }
 
-tourist_32$number_of_toiet <- number
+#add the list into a new column of tourist data (Toilet_400m is the column created by Python)
+tourist_31$number_of_toiet <- number
 
-#Write a function to inquiry for toilets in a distance of j meters from spot i
+#Breaking down functions: Haversine distance can also be calculated as below
+deg2rad <- function(deg) return(deg*pi/180)
+#haversine_km results in the same as deg.dist or distHaversine
+haversine_km = function(lon1, lat1, lon2, lat2){
+  # Convert degrees to radians
+  lon1 <- deg2rad(lon1)
+  lat1 <- deg2rad(lat1)
+  lon2 <- deg2rad(lon2)
+  lat2 <- deg2rad(lat2)
+  R = 6371 #Mean radius of the earth in km
+  diff.lon = (lon2-lon1)
+  diff.lat = (lat2-lat1)
+  a =(sin(diff.lat/2) * sin(diff.lat/2) + cos(lat1) * cos(lat2) * sin(diff.lon/2)* sin(diff.lon/2))
+  c= 2*atan2(sqrt(a),sqrt(1-a))
+  d = R*c
+  return(d) #Distance in km
+}
+# Write a function to inquiry for toilets 
+# in a distance of j meters from spot i
 
 which_toilet_to_go <- function(i,j) 
+{
+  for (n in 1:nrow(taipei_toilet)) 
   {
-  for (n in 1:nrow(toilet)) 
-    {
-  a = deg.dist(
-    tourist_32$Longitude[tourist_32$Sight == i], 
-    tourist_32$Latitude[tourist_32$Sight == i], 
-    taipei_toilet$longitude[n], 
-    taipei_toilet$latitude[n]) #run a loop from that specific tourist spot to all toilet in dataset
+    a = deg.dist(
+      tourist_31$Longitude[tourist_31$Sight == i], 
+      tourist_31$Latitude[tourist_31$Sight == i], 
+      taipei_toilet$longitude[n], 
+      taipei_toilet$latitude[n]) #run a loop from that specific tourist spot to all toilet in dataset
     if (a < j/1000) #deg.dist calculates the distance in kilometer unit
     {
-      print(paste(toilet$name[n], a*1000, "meters ", toilet$type[n])) }
+      print(paste(toilet$name[n],",", a*1000, "meters")) }
     else
     {next}
   }
 }
 
-which_toilet_to_go("市立動物園",400)
+which_toilet_to_go("故宮博物院", 400)
 ```
 
 **Solutions in Python (Taipei only)**
