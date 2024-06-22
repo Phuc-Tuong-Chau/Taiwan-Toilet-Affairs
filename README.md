@@ -6,7 +6,7 @@
 <p>This project seeks to examine Taiwan through the lens of a fundamental human need: the provision of public toilets. Access to public bathrooms shapes the experience of being a human in a city and should be an essential part in urban planning. As there haven't been an analysis about Taiwan's toilet so far, we want to explore it and make the data useful for the public and researchers.</p>
 
 ### Goal
-The goal of the project is three-fold:
+This project has three goals:
 - First, we want to examine the density and distribution of public toilets across Taiwan. We will calculate and visualize it through to index: toilets per population and toilets per area
 - Second, we aim to create *Tourist Toilet Index* - a new variable that shows the number of public toilets around tourist spots in Taipei/Taiwan. This can serve as an index to measure the quality of urban planning across cities/countries
 - And third, we want to make an interactive map that shows every public toilet in Taipei around the walking distance of popular tourist spots. This is hopefully useful for somebody in need when nature calls. We can only do Taipei due to technical capacity.
@@ -35,13 +35,13 @@ The goal of the project is three-fold:
 
 ## File Structure
 [Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
-1. taiwan_toilet_full:
-2. tourist_spot_full:
-3. taiwan_population:
-4. taipei_population:
-5. Taipei_Toilet_new:
-6. tourist_with_boundaries_en
-7. 
+1. taiwan_toilet_full: All toilets data, translated and cleaned, N=44876
+2. tourist_spot_full: All tourist spots, removed repetition, N=922
+3. taiwan_population: Population, area, toilets by all counties, N=23 (22 counties + all taiwan)
+4. taipei_population: Taipei population per district, for mapping, N=13
+5. Taipei_Toilet_new: Taipei toilets coordinates, N=6994
+6. tourist_with_boundaries_en: Taipei Tourists spots & coordinates, N=31
+7. 2021TW_SHP.zip: Taiwan maps for plotting
 
 ## Analysis
 [Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
