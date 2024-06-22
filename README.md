@@ -380,7 +380,7 @@ Toilets around tourist spots in Taipei
 - In terms of population, using moving population (people with active phone numbers) will reflect better result then census data as we use here.
 
 ## Contributors
-
+Group: BD-02
 - Nguyen, Thi Xuan Huong (Huong) 阮春香, 112ZM1043, Project Manager, Writer
 - Chu, Fu-Hsiang (Gary) 朱福祥, 109ZU1027, Coder & Writer
 - Bui, Phuong Thao (Thao) 裴芳草, 113ZM1011, Coder & Writer
