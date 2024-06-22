@@ -149,6 +149,102 @@ which_toilet_to_go <- function(i,j)
 }
 
 which_toilet_to_go("故宮博物院", 400)
+
+#Create the interactive maps
+
+#Import TW map
+
+tw_map <- st_read("tw_map.shp")
+tpe_map <- tw_map %>%
+  filter(COUNTY_ID == "63000")
+
+#Create labels for toilet + tourist spot
+
+tourist_spot_labels <- sprintf(paste(
+  tourist_31$Sight, "has", tourist_31$number_of_toiet, "toilets around")
+) %>% lapply(htmltools::HTML)
+
+toilet_labels <- sprintf(taipei_toilet$name) %>% lapply(htmltools::HTML)
+
+#Create map that clusters toilets for cleaner visual
+
+tourist_cluster <- leaflet() |>
+  addTiles() |>
+  setView(lng = 121.5654, lat = 25.1, zoom = 11) |>
+  addPolygons(data = tpe_map,
+              weight = 1,
+              opacity = 1,
+              color = "white",
+              fillOpacity = 0.05) |>
+  addMarkers(data = tourist_31, label = tourist_spot_labels,
+             labelOptions = labelOptions(
+               style = list("font-weight" = "normal", padding = "3px 8px"),
+               textsize = "15px",
+               direction = "auto")) |>
+  addCircles(data = tourist_31, 
+             radius = 400, 
+             weight = 4, 
+             opacity = 0.2, 
+             color = "#336699",
+             stroke = FALSE) |>
+  addCircleMarkers(data = taipei_toilet,
+                   radius = 5,
+                   stroke = FALSE,
+                   color = "#006600",
+                   weight = 3,
+                   opacity = 2,
+                   fill = TRUE,
+                   label = toilet_labels,
+                   labelOptions = labelOptions(
+                     style = list("font-weight" = "normal", padding = "3px 8px"),
+                     textsize = "15px",
+                     direction = "auto"),
+                   clusterOptions = markerClusterOptions(
+                     spiderfyOnMaxZoom = TRUE,
+                     zoomToBoundsOnClick = TRUE))
+
+tourist_cluster
+
+#No cluster map
+
+tourist_no_cluster <- leaflet() |>
+  addTiles() |>
+  setView(lng = 121.5654, lat = 25.1, zoom = 11) |>
+  addPolygons(data = tpe_map,
+              weight = 1,
+              opacity = 1,
+              color = "white",
+              fillOpacity = 0.05) |>
+  addMarkers(data = tourist_31, label = tourist_spot_labels,
+             labelOptions = labelOptions(
+               style = list("font-weight" = "normal", padding = "3px 8px"),
+               textsize = "15px",
+               direction = "auto")) |>
+  addCircles(data = tourist_32, 
+             radius = 400, 
+             weight = 4, 
+             opacity = 0.2, 
+             color = "#336699",
+             stroke = FALSE) |>
+  addCircleMarkers(data = taipei_toilet,
+                   radius = 5,
+                   stroke = FALSE,
+                   color = "#006600",
+                   weight = 3,
+                   opacity = 2,
+                   fill = TRUE,
+                   label = toilet_labels,
+                   labelOptions = labelOptions(
+                     style = list("font-weight" = "normal", padding = "3px 8px"),
+                     textsize = "15px",
+                     direction = "auto"))
+
+tourist_no_cluster
+
+#save HTML maps
+saveWidget(tourist_no_cluster, file="tourist_no_cluster.html")
+saveWidget(tourist_cluster, file="toilet_cluster.html")
+
 ```
 
 **Solutions in Python (Taipei only)**
