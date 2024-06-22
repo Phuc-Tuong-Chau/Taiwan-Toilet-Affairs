@@ -1,9 +1,8 @@
 # Taiwan Toilet Affairs
 
 ## Project Description
-[Enter a brief description of your project, including the data you used and the analytical methods you applied. Be sure to provide context for your project and explain why it is important.]
 
-<p>This project seeks to examine Taiwan through the lens of a fundamental human need: the provision of public toilets. Access to public bathrooms shapes the experience of being a human in a city and should be an essential part in urban planning. As there haven't been an analysis about Taiwan's toilet so far, we want to explore it and make the data useful for the public and researchers.</p>
+<p>This project seeks to examine Taiwan through the lens of a fundamental human need: the provision of public toilets. Access to public bathrooms shapes the experience of being a human in a city and should be an essential part in urban planning. As there hasn't been an analysis about Taiwan's toilet so far, we want to explore it and make the data useful for the public and researchers.</p>
 
 ### Goal
 This project has three goals:
@@ -34,23 +33,23 @@ This project has three goals:
 4. Python packages needed: Pandas for data aggregation, Numpy for calculation, Folium for the map
 
 ## File Structure
-[Describe the file structure of your project, including how the files are organized and what each file contains. Be sure to explain the purpose of each file and how they are related to one another.]
 1. taiwan_toilet_full: All toilets data, translated and cleaned, N=44876
 2. tourist_spot_full: All tourist spots, removed repetition, N=922
 3. taiwan_population: Population, area, toilets by all counties, N=23 (22 counties + all taiwan)
 4. taipei_population: Taipei population per district, for mapping, N=13
 5. Taipei_Toilet_new: Taipei toilets coordinates, N=6994
-6. tourist_with_boundaries_en: Taipei Tourists spots & coordinates, N=31
+6. tourist_with_boundaries_en: Taipei most popular Tourists spots & coordinates, compiled manually from Taipei's government data & Google Maps, N=31
 7. 2021TW_SHP.zip: Taiwan maps for plotting
+8. R-final.R: R Script for main tasks (some minor analysis are done previously)
+9. tourists_toilet: Results: Toilets around 400m of tourists spots, N=922
 
 ## Analysis
-[Describe your analysis methods and include any visualizations or graphics that you used to present your findings. Explain the insights that you gained from your analysis and how they relate to your research question or problem statement.]
 
 ### Toilets Distribution per Population & Area
-We calculate the number of toilets per 100,000 population and area (km2) for 22 counties/cities in Taiwan and nationwide. This is the method used by Bliss & Park (2020) to examine toilet distribution in 12 cities in the US, Europe and Asia. From the toilet data, we use dplyr's group_by command to aggregate toilet numbers, then we merge it with population and area data to calculate. The data is presented in file []
+We calculate the number of toilets per 100,000 population and area (km2) for 22 counties/cities in Taiwan and nationwide. This is the method used by Bliss & Park (2020) to examine toilet distribution in 12 cities in the US, Europe and Asia. From the toilet data, we use dplyr's group_by command to aggregate toilet numbers, then we merge it with population and area data to calculate. The data is presented in file taiwan_population.xlsx.
 
-Findings:
-- Toilets per 100k population: Taitung has the highest ratio: 377.4, while Pingtung has the lowest: 125.2. Average number is 256 and median number is 216. (Notes: Results are not valid counties with population below 100k people: Lianjiang, Kinmen, Penghu)
+**Findings:**
+- Toilets per 100k population: Taitung has the highest ratio: 377.4, while Pingtung has the lowest: 125.2. Average number is 256 and median number is 216. (Notes: Results are not valid in counties with population below 100k people: Lianjiang, Kinmen, Penghu)
 - Toilets per area (km2): Taipei has the highest ratio: 25.7; while Hualien has the lowest: 0.16. Average number is 3.4 and median is 1.4.
 
 We visualize the result using heatmap & charts, for Taiwan and Taipei below.
@@ -343,7 +342,7 @@ for _, row in within_range_toilets_df.iterrows():
 
 The main index regarding public toilets in the cities in Taiwan is presented below.
 - Tourist Toilet Index: The average number in Taiwan is 17.6. All cities/counties in Taiwan has a positive number of toilets around. The lowest is Kinmen (1.5) and the highest is Taipei (54.6). 
-- Tourist spots with zero toilet in walking distance: In 922 tourists spots we examine in Taiwan, there are 214 has no toilets in 400m radius. They exist in 21 counties except Hsinchu City (新竹市), with the highest number is in Nantou (30/58).
+- Tourist spots with *zero* toilet in walking distance: In 922 tourists spots we examine in Taiwan, there are 214 has no toilets in 400m radius (23%). They exist in 21 counties except Hsinchu City (新竹市), with the highest number is in Nantou (30/58).
 - All Taiwan counties pass the standard recommended by Loo of the Year Award, which is at least one toilet facility should be provided in every settlement with a population of over 5000.
 
 | city_cn | city_en        | toilet_numbers | tourist_spots | zero_toilets | tourist_toilet_index | toilet_per_5000 | toilet_per_100k | toilet_per_km2 |
