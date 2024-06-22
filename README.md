@@ -1,5 +1,4 @@
-# Project Title
-Taiwan Toilet Affairs
+# Taiwan Toilet Affairs
 
 ## Project Description
 [Enter a brief description of your project, including the data you used and the analytical methods you applied. Be sure to provide context for your project and explain why it is important.]
@@ -65,6 +64,8 @@ Where:
 
 In our analysis, a circle is drawn with a radius equivalent to 400 meters around tourist spots in Taiwan. The decision of the length lies upon the common standard, as 400-meter is widely accepted as a conventional walking distance. We mark all the public toilets in the provided range of circles and calculate the average number of public toilets within the area of every tourist spots. After that, we create an interactive map html file to showcase our results with markers of tourists spots in Taipei as well as surrounding public toilets. We show the demonstration in R and Python below.
 
+In R, for calculate the distance by Haversine formula, there're at least two function: *geosphere::distHaversine* and *fossil::deg.dist*. Both works well with current data, but for bigger dataset (>1000 tourist spots and >44000 toilet across Taiwan), *deg.dist* does faster. geosphere::distHaversine calculates distance in meters, while deg.dist in kilometers
+
 **Solutions in R (calculation all Taiwan, maps Taipei)**
 
 ```R
@@ -89,7 +90,6 @@ library(htmlwidgets)
 tourist_31 <- read.csv("tourists_with_boundaries.csv")
 taipei_toilet <- read.csv("Taipei_Toilet_new.csv")
 
-#For calculate the distance by Haversine formula, there're at least two function in R, geosphere::distHaversine and fossil::deg.dist. Both works well with current data but for bigger dataset (1000 tourist spots and 44000 toilet across Taiwan), deg.dist does faster. geosphere::distHaversine calculates distance in meters, while deg.dist in kilometers
 #Create a loop to calculate distace from every tourist spot to all toilet,
 #count the number of toilet in 400 m, add counts to a list (every count is one tourist spot's number of walkable toilets)
 
