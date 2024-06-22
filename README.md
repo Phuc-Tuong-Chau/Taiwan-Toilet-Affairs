@@ -105,7 +105,7 @@ for (i in 1:nrow(tourist_31))
       taipei_toilet$longitude[n], 
       taipei_toilet$latitude[n]
     ) }
-  number[i] = length(distance[distance < 0.4])
+  number[i] = length(distance[distance < 0.4]) #fossil::deg.dist returns distance in kilometers
 }
 
 #add the list into a new column of tourist data (Toilet_400m is the column created by Python)
