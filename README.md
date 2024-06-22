@@ -375,8 +375,8 @@ The main index regarding public toilets in the cities in Taiwan is presented bel
 
 ### Interactive maps
 Toilets around tourist spots in Taipei
-[Map created by python](https://thetoiletaffairs.github.io/golive/en.html)
-[Map created by R with cluster](https://thaooi.github.io/toilet/toilet_cluster.html)
+- [Map created by python](https://thetoiletaffairs.github.io/golive/en.html)
+- [Map created by R with cluster](https://thaooi.github.io/toilet/toilet_cluster.html)
 
 ### Limitations & Notes for further researches:
 - Toilets data in Taiwan is calculated by rooms inside a facilities. In some other places, toilets are counted on the unique adress. In order to compare across countries, it's necessary to make the data consistent.
