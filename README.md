@@ -393,18 +393,16 @@ Toilets around tourist spots in Taipei
 - And millions thanks to the members of online coding communities. We learn so much from you.
   
 ## References
-**1. Data sources:**
-    - Archives on public toilets nationwide, Environmental Protection Administration, Ministry of Environment (Taiwan). https://data.moenv.gov.tw/en/dataset/detail/FAC_P_07
-    - Shaowei Wu’s Blog (2018) Coordinate location map of Taiwan’s attractions. https://shaoweiwu088.pixnet.net/blog/post/262765884-%e5%85%a8%e5%8f%b0%e6%99%af%e9%bb%9e%e5%ba%a7%e6%a8%99%e4%bd%8d%e7%bd%ae%e5%9c%96
-    - The number of tourists in the major sightseeing and recreation areas of Taipei City. Department of Budget, Accounting and Statistics, Taipei City Government. https://data.gov.tw/en/datasets/131711
-    - Taiwan Counties and Cities Population and Area. Ministry of Interior, Republic of China (Taiwan); National Statistics, Republic of China (Taiwan). Access through Citypopulation.de. https://www.citypopulation.de/en/taiwan/cities/
+**Data sources:**
+- Archives on public toilets nationwide, Environmental Protection Administration, Ministry of Environment (Taiwan). https://data.moenv.gov.tw/en/dataset/detail/FAC_P_07
+- Shaowei Wu’s Blog (2018) Coordinate location map of Taiwan’s attractions. https://shaoweiwu088.pixnet.net/blog/post/262765884-%e5%85%a8%e5%8f%b0%e6%99%af%e9%bb%9e%e5%ba%a7%e6%a8%99%e4%bd%8d%e7%bd%ae%e5%9c%96
+- The number of tourists in the major sightseeing and recreation areas of Taipei City. Department of Budget, Accounting and Statistics, Taipei City Government. https://data.gov.tw/en/datasets/131711
+- Taiwan Counties and Cities Population and Area. Ministry of Interior, Republic of China (Taiwan); National Statistics, Republic of China (Taiwan). Access through Citypopulation.de. https://www.citypopulation.de/en/taiwan/cities/
 
 **Researches/Projects:**
-    - Silitonga, S. (2020). Walkability; The Relationship of Walking Distance, Walking Time and Walking Speed. Jurnal Rekayasa Konstruksi Mekanika Sipil (JRKMS), 3(1), 19-26. DOI: 10.54367/JRKMS.V3I1.699.
-    - Bliss, D. Z., & Park, Y. S. (2020). Public toilets in parklands or open spaces in international cities using geographic information systems. International urogynecology journal, 31(5), 939–945. https://doi.org/10.1007/s00192-019-04024-6
-    - Simon Kettle (2017). Distance on a sphere: The Haversine formulas. https://community.esri.com/t5/coordinate-reference-systems-blog/distance-on-a-sphere-the-haversine-formula/ba-p/902128
-    - Loo of the Year Award: https://www.loo.co.uk/46/Toilet-Ratios
+- Silitonga, S. (2020). Walkability; The Relationship of Walking Distance, Walking Time and Walking Speed. Jurnal Rekayasa Konstruksi Mekanika Sipil (JRKMS), 3(1), 19-26. DOI: 10.54367/JRKMS.V3I1.699.
+- Bliss, D. Z., & Park, Y. S. (2020). Public toilets in parklands or open spaces in international cities using geographic information systems. International urogynecology journal, 31(5), 939–945. https://doi.org/10.1007/s00192-019-04024-6
+- Simon Kettle (2017). Distance on a sphere: The Haversine formulas. https://community.esri.com/t5/coordinate-reference-systems-blog/distance-on-a-sphere-the-haversine-formula/ba-p/902128
+- Loo of the Year Award: https://www.loo.co.uk/46/Toilet-Ratios
 - Python packages: Pandas for data aggregation, Numpy for calculation, Folium for the map
 - R packages: For data analysis: ggplot, dplyr, tidyr, ggplot2, tidyverse; For calculation and mapping: leaflet, geosphere, fossil, htmlwidgets
-
-
