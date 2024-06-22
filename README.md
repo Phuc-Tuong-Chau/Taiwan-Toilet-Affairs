@@ -19,7 +19,6 @@ This project has three goals:
 | Taiwan's cities population and area | Ministry of Interior, Republic of China (Taiwan); National Statistics | To calculate the density of toilets per population and area at cities levels |
 
 ## Getting Started
-[Provide instructions on how to get started with your project, including any necessary software or data. Include installation instructions and any prerequisites or dependencies that are required.]
 1. Data collection & cleaning:
     - Taiwan Toilet data: download from source, rename columns, translate into English, factcheck
     - Taipei tourist spots: list from Taipei Government and coordinates from Google Maps, rename columns, rearrange, factcheck
@@ -30,7 +29,7 @@ This project has three goals:
 2. R Packages needed:
    - For data analysis: ggplot, dplyr, tidyr, ggplot2, tidyverse
    - For calculation and mapping: leaflet, geosphere, fossil, htmlwidgets
-4. Python packages needed: Pandas for data aggregation, Numpy for calculation, Folium for the map
+3. Python packages needed: Pandas for data aggregation, Numpy for calculation, Folium for the map
 
 ## File Structure
 1. taiwan_toilet_full: All toilets data, translated and cleaned, N=44876
@@ -378,14 +377,14 @@ Toilets around tourist spots in Taipei
 - [Map created by R with cluster](https://thaooi.github.io/toilet/toilet_cluster.html)
 
 ### Limitations & Notes for further researches:
-- Toilets data in Taiwan is calculated by rooms inside a facilities. In some other places, toilets are counted on the unique adress. In order to compare across countries, it's necessary to make the data consistent.
+- Toilets data in Taiwan is calculated by rooms inside facilities. In some other places, toilets are counted on the unique adress. In order to compare across countries, it's necessary to make the data consistent.
 - In terms of population, using moving population (people with active phone numbers) will reflect better result then census data as we use here.
 
 ## Contributors
 [List the contributors to your project and describe their roles and responsibilities.]
 
-- Nguyen, Thi Xuan Huong (Huong) 阮春香, 112ZM1043, Project Manager
-- Chu, Fu-Hsiang (Gary) 朱福祥, 109ZU1027, Coder
+- Nguyen, Thi Xuan Huong (Huong) 阮春香, 112ZM1043, Project Manager, Writer
+- Chu, Fu-Hsiang (Gary) 朱福祥, 109ZU1027, Coder & Writer
 - Bui, Phuong Thao (Thao) 裴芳草, 113ZM1011, Coder & Writer
 - Karolina Kubicova (Karolina) 辜麗娜, 112ZM1044, Researcher, Designer, Writer
 
@@ -397,13 +396,13 @@ Toilets around tourist spots in Taipei
   
 ## References
 [List any references or resources that you used during your project, including data sources, analytical methods, and tools.]
-- Data sources:
+**1. Data sources:**
     - Archives on public toilets nationwide, Environmental Protection Administration, Ministry of Environment (Taiwan). https://data.moenv.gov.tw/en/dataset/detail/FAC_P_07
     - Shaowei Wu’s Blog (2018) Coordinate location map of Taiwan’s attractions. https://shaoweiwu088.pixnet.net/blog/post/262765884-%e5%85%a8%e5%8f%b0%e6%99%af%e9%bb%9e%e5%ba%a7%e6%a8%99%e4%bd%8d%e7%bd%ae%e5%9c%96
     - The number of tourists in the major sightseeing and recreation areas of Taipei City. Department of Budget, Accounting and Statistics, Taipei City Government. https://data.gov.tw/en/datasets/131711
     - Taiwan Counties and Cities Population and Area. Ministry of Interior, Republic of China (Taiwan); National Statistics, Republic of China (Taiwan). Access through Citypopulation.de. https://www.citypopulation.de/en/taiwan/cities/
 
-- Researches/Projects:
+**Researches/Projects:**
     - Silitonga, S. (2020). Walkability; The Relationship of Walking Distance, Walking Time and Walking Speed. Jurnal Rekayasa Konstruksi Mekanika Sipil (JRKMS), 3(1), 19-26. DOI: 10.54367/JRKMS.V3I1.699.
     - Bliss, D. Z., & Park, Y. S. (2020). Public toilets in parklands or open spaces in international cities using geographic information systems. International urogynecology journal, 31(5), 939–945. https://doi.org/10.1007/s00192-019-04024-6
     - Simon Kettle (2017). Distance on a sphere: The Haversine formulas. https://community.esri.com/t5/coordinate-reference-systems-blog/distance-on-a-sphere-the-haversine-formula/ba-p/902128
