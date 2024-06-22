@@ -335,8 +335,6 @@ for _, row in within_range_toilets_df.iterrows():
 
 ```
 ## Results
-[Provide a summary of your findings and conclusions, including any recommendations or implications for future research. Be sure to explain how your results address your research question or problem statement.]
-
 ### Public Toilet Index
 
 The main index regarding public toilets in the cities in Taiwan is presented below.
@@ -370,18 +368,18 @@ The main index regarding public toilets in the cities in Taiwan is presented bel
 | 金門縣  | Kinmen County  | 349            | 2             | 1            | 1.50                 | 26.0            | 519.6           | 2.30           |
 | 全台灣  | All Taiwan     | 44876          | 922           | 214          | 16.70                | 9.4             | 188.3           | 1.24           |
 
-
 ### Interactive maps
+
 Toilets around tourist spots in Taipei
 - [Map created by python](https://thetoiletaffairs.github.io/golive/en.html)
 - [Map created by R with cluster](https://thaooi.github.io/toilet/toilet_cluster.html)
 
 ### Limitations & Notes for further researches:
-- Toilets data in Taiwan is calculated by rooms inside facilities. In some other places, toilets are counted on the unique adress. In order to compare across countries, it's necessary to make the data consistent.
+
+- Toilets data in Taiwan is calculated by rooms inside facilities. In some other places, toilets are counted on the unique adress. This causes us confusion when we want to compare different places. In order to do this, we need to clarify data collection method.
 - In terms of population, using moving population (people with active phone numbers) will reflect better result then census data as we use here.
 
 ## Contributors
-[List the contributors to your project and describe their roles and responsibilities.]
 
 - Nguyen, Thi Xuan Huong (Huong) 阮春香, 112ZM1043, Project Manager, Writer
 - Chu, Fu-Hsiang (Gary) 朱福祥, 109ZU1027, Coder & Writer
@@ -389,13 +387,12 @@ Toilets around tourist spots in Taipei
 - Karolina Kubicova (Karolina) 辜麗娜, 112ZM1044, Researcher, Designer, Writer
 
 ## Acknowledgments
-[Thank any individuals or organizations who provided support or assistance during your project, including funding sources or data providers.]
+
 - We'd like to thank Professor Chung-Pei Pien of ICI for his guidance and encouragement throughout the course Big Data and Social Analysis. His excitement for this toilet idea was key in pushing us go forward. Thanks also to the TAs, Joanna and Maobin for their help in organizing the course. And to Datacamp for being an extra teacher.
 - Great thanks to the to the data collectors working with the Ministry of Environment for keeping a good record of the toilets around Taiwan. We hope you keep up the great work! Taipei's tourists spotThe coordinates of over 1000 tourists spots around Taiwan is from Shaowei Wu's blog. We also thank you for sharing that to the public domain.
 - And millions thanks to the members of online coding communities. We learn so much from you.
   
 ## References
-[List any references or resources that you used during your project, including data sources, analytical methods, and tools.]
 **1. Data sources:**
     - Archives on public toilets nationwide, Environmental Protection Administration, Ministry of Environment (Taiwan). https://data.moenv.gov.tw/en/dataset/detail/FAC_P_07
     - Shaowei Wu’s Blog (2018) Coordinate location map of Taiwan’s attractions. https://shaoweiwu088.pixnet.net/blog/post/262765884-%e5%85%a8%e5%8f%b0%e6%99%af%e9%bb%9e%e5%ba%a7%e6%a8%99%e4%bd%8d%e7%bd%ae%e5%9c%96
