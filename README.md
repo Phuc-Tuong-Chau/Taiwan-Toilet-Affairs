@@ -129,8 +129,9 @@ haversine_km = function(lon1, lat1, lon2, lat2){
   d = R*c
   return(d) #Distance in km
 }
+
 # Write a function to inquiry for toilets 
-# in a distance of j meters from spot i
+# in a distance of j meters from spot i (can use for later search features on the map)
 
 which_toilet_to_go <- function(i,j) 
 {
@@ -149,6 +150,7 @@ which_toilet_to_go <- function(i,j)
   }
 }
 
+#test
 which_toilet_to_go("故宮博物院", 400)
 
 #Create the interactive maps
