@@ -170,7 +170,7 @@ which_toilet_to_go <- function(i,j)
       taipei_toilet$latitude[n]) #run a loop from that specific tourist spot to all toilet in dataset
     if (a < j/1000) #deg.dist calculates the distance in kilometer unit
     {
-      print(paste(toilet$name[n],",", a*1000, "meters")) }
+      print(paste(taipei_toilet$name[n],",", a*1000, "meters")) }
     else
     {next}
   }
